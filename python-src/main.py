@@ -8,8 +8,15 @@ headers = {
     'sec-fetch-site': 'same-origin',
     'content-type': 'application/json; charset=UTF-8'
 }
-request = requests.get('https://books.google.com.br/books?id=xxoXcuh0oS0C&hl=pt-BR&pg=PA3&jscmd=click3',headers=headers)
-print(request.content)
+request = requests.get(
+    'https://books.google.com.br/books',
+    headers=headers,
+    params=[
+        ('id','xxoXcuh0oS0C'),
+        ('hl','pt-BR'),
+        ('pg','PA3'),
+        ('jscmd','click3')])
+print(request.text)
 print()
 for req_page in request.json()['page']:
     print(req_page)
