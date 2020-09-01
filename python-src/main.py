@@ -1,25 +1,46 @@
-import requests
 import json
+import urllib.request
+lk = input('Link do Google Books: ')
+book_id = (lk.split("?")[1].split("id=")[1].split('&')[0])
 pages = []
-headers = {
-    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36',
-    'x-client-data': 'CKG1yQEIkbbJAQijtskBCMS2yQEIqZ3KAQjWocoBCJm1ygEI+MfKAQjnyMoBCOnIygEItMvKAQiW1soBCLvXygE=',
-    'sec-fetch-mode': 'cors',
-    'sec-fetch-site': 'same-origin',
-    'content-type': 'application/json; charset=UTF-8'
-}
-request = requests.get(
-    'https://books.google.com.br/books',
-    headers=headers,
-    params=[
-        ('id','xxoXcuh0oS0C'),
-        ('hl','pt-BR'),
-        ('pg','PA3'),
-        ('jscmd','click3')])
-print(request.text)
+cont = 1
+request = urllib.request.urlopen("https://books.google.com.br/books?id="+(book_id)+"&hl=pt-BR&pg=PR"+str(cont)+"&jscmd=click3")
+request_json = json.loads(request.read())['page']
 print()
-for req_page in request.json()['page']:
-    print(req_page)
+i = 0;
+for req_page in request_json :
+    pages.append([{req_page['pid']}])
+    try:
+        print(req_page['src'])
+        pages[i].append({req_page['src']})
+    except:
+        pages
+    i = i+1
+print()
+cont = int(str(pages[len(pages)-1][0]).split("'")[1].split('PA')[1])
+print(cont)
 
+pages_url = []
+for inc in range(1,cont+1):
+    print(inc)
+    request = urllib.request.urlopen("https://books.google.com.br/books?id="+(book_id)+"&lpg=PR3&hl=pt-BR&pg=PA"+str(inc)+"&jscmd=click3")
+    request_json = json.loads(request.read())['page']
+    req_page = request_json[0] 
+    print(req_page) 
+    try:
+        
+        pages_url.append([{req_page['pid']},{req_page['src']}])
+    except:
+        print(inc)
+    
+print()
+for page in pages_url:
+    print(page)
+'''
+print()
+for req_page in request_json :
+    if([{req_page['pid']}] in pages):
+        print('aaa')
 
+'''
 
