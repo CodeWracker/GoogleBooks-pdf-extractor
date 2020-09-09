@@ -4,8 +4,9 @@ lk = input('Link do Google Books: ')
 book_id = (lk.split("?")[1].split("id=")[1].split('&')[0])
 pages = []
 cont = 1
-request = urllib.request.urlopen("https://books.google.com.br/books?id="+(book_id)+"&hl=pt-BR&pg=PR"+str(cont)+"&jscmd=click3")
-request_json = json.loads(request.read())['page']
+#https://books.google.com.br/books?id=xxoXcuh0oS0C&lpg=PR3&hl=pt-BR&pg=PA70&jscmd=click3
+request = urllib.request.urlopen("https://books.google.com.br/books?id="+str(book_id)+"&lpg=PR3&hl=pt-BR&pg=PA"+str(cont)+"&jscmd=click3")
+request_json = json.loads(request.read())
 print()
 i = 0;
 for req_page in request_json :
