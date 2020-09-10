@@ -10,6 +10,8 @@ Here are some important things:
 
 ## Submitting changes
 
+DO NOT COMMIT TO MASTER! Create a new branch with a clear name that identifies your changes and play with the code THERE.
+
 Please send a [GitHub Pull Request to GBpdfE](https://github.com/CodeWracker/GoogleBooks-pdf-extractor/new/master/pull/new/master) with a clear list of what you've done. Please follow the coding conventions (below) and make sure all of your commits are atomic (one feature per commit).
 
 Always write a clear log message for your commits. One-line messages are fine for small changes, but bigger changes should look like this:
