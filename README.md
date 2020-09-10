@@ -1,5 +1,10 @@
 # GoogleBooks-pdf-extractor
-a script to obtain a pdf from a given google books page
+A script to obtain a pdf from a given google books page
+
+## Project Diagram
+![alt text](https://raw.githubusercontent.com/CodeWracker/GoogleBooks-pdf-extractor/master/readme-data/diagrama.png)
+
+---------------------------------------
 
 ## How it Works
 *The work still incomplete, but i will describe here how i have idealized the project*
@@ -21,10 +26,6 @@ a script to obtain a pdf from a given google books page
   >      > Its done this way becouse GooGle Books only displays on screen four pages each time, so it keeps doing requests to complete the book on your browser
   >  3. Each time the program make a request and get the list of pages, it extract the page image link from the data and saves it
   >  4. Once I have all the pages avaible to get for free from the request url it crates a pdf with all the pages
-
-### Project Diagram
-
-![alt text](https://raw.githubusercontent.com/CodeWracker/GoogleBooks-pdf-extractor/master/readme-data/diagrama.png)
 
 ### Directory Tree
 
