@@ -24,7 +24,7 @@ a script to obtain a pdf from a given google books page
 
 ### Project Diagram
 
-
+![alt text](https://raw.githubusercontent.com/CodeWracker/GoogleBooks-pdf-extractor/master/readme-data/diagrama.png)
 
 ### Directory Tree
 
