@@ -29,16 +29,18 @@ A script to obtain a pdf from a given google books page
 
 ### Directory Tree
 
-.
-
+.<br/>
 ├── CONTRIBUTING.md<br/>
 ├── Issues-data<br/>
 │   └── 1<br/>
-├── readme-data<br/>
+│       ├── ...<br/>
 ├── README.md<br/>
 ├── geckodriver.exe<br/>
 ├── geckodriver.log<br/>
+├── readme-data<br/>
+│   ├── diagrama.png<br/>
+│   ├── ...<br/>
 └── src<br/>
-│   └── main.py
+    └── main.py<br/>
 
     
